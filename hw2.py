@@ -13,6 +13,8 @@ scene.center = vector(5, 5, 5)
 scene.autoscale = False
 
 
+H0_3 = [[1, 0, 0, 10], [0, 0, -1, 2.5], [0, -1, 0, -10], [0, -1, 0, 0]]
+
 
 #-----------3rd cylinder and its line----------
 
@@ -38,7 +40,7 @@ cylinder3_line4 = box(pos = vector(17.5, 2.5, -10),
     size = vector(5, 0.5, 0.5), 
     color = vector(1, 1, 0)) 
 
-group_3=compound([cylinder3, cylinder3_line1, cylinder3_line2, cylinder3_line3, cylinder3_line4])
+group_3=compound([cylinder3, cylinder3_line1, cylinder3_line2, cylinder3_line3, cylinder3_line4], origin=vector(10, 2.5, -10))
 
 #-----------------------------------------
 
@@ -68,7 +70,7 @@ cylinder2_line4 = box(pos = vector(7.5, 2.5, -10),
     size = vector(5, 0.5, 0.5), 
     color = vector(1, 1, 0)) 
 
-group_2=compound([cylinder2, cylinder2_line1, cylinder2_line2, cylinder2_line3, cylinder2_line4])
+group_2=compound([cylinder2, cylinder2_line1, cylinder2_line2, cylinder2_line3, cylinder2_line4], origin=vector(0, 2.5, -10))
 
 #----------------------------------------------
 
@@ -171,31 +173,34 @@ def rotate_x(event):
 
     if event.key == 'a' or event.key == 'b':
         group_2.pos = vector(H0_1[:,3][0], H0_1[:,3][1], H0_1[:,3][2])
-        group_2.axis = vector(-H0_1[:,2][1], H0_1[:,2][0], H0_1[:,2][2])
-        #group_2.length = -5
+        group_2.axis = vector(H0_2[:,0][0], H0_2[:,0][1], H0_2[:,0][2])
+
 
         group_3.pos = vector(H0_2[:,3][0], H0_2[:,3][1], H0_2[:,3][2])
-        group_3.axis = vector(-H0_2[:,2][1], H0_2[:,2][0], H0_2[:,2][2])
-        #group_3.length = -5
+        group_3.axis = vector(H0_2[:,0][0], H0_2[:,0][1], H0_2[:,0][2])
+        #group_3.origin = vector(H0_2[:,3][0], H0_2[:,3][1], H0_2[:,3][2])
+
         
     if event.key == 'c' or event.key == 'd':
         group_2.pos = vector(H0_1[:,3][0], H0_1[:,3][1], H0_1[:,3][2])
-        group_2.axis = vector(-H0_2[:,1][2], H0_2[:,1][1], H0_2[:,1][0])
-        #group_2.length = -5
+        group_2.axis = vector(H0_2[:,0][0], H0_2[:,0][1], H0_2[:,0][2])
+
 
         group_3.pos = vector(H0_2[:,3][0], H0_2[:,3][1], H0_2[:,3][2])
-        group_3.axis = vector(-H0_2[:,1][2], H0_2[:,1][1], H0_2[:,1][0])
-        #group_3.length = -5
+        group_3.axis = vector(H0_2[:,0][0], H0_2[:,0][1], H0_2[:,0][2])
+        #group_3.origin = vector(H0_2[:,3][0], H0_2[:,3][1], H0_2[:,3][2])
+
        
         
     if event.key == 'e' or event.key == 'f':
-        group_2.pos = vector(H0_1[:,3][0], H0_1[:,3][1], H0_1[:,3][2])
-        group_2.axis = vector(-H0_2[:,2][1], H0_2[:,2][0], H0_2[:,2][2])
-        #group_2.length = -5
+        #group_2.pos = vector(H0_1[:,3][0], H0_1[:,3][1], H0_1[:,3][2])
+        #group_2.axis = vector(-H0_2[:,2][1], H0_2[:,2][0], H0_2[:,2][2])
 
-        group_3.pos = vector(H0_2[:,3][0], H0_2[:,3][1], H0_2[:,3][2])
-        group_3.axis = vector(-H0_3[:,2][1], H0_3[:,2][0], H0_3[:,2][2])
-        #group_3.length = -5
+
+        group_3.pos = vector(H0_3[:,3][0], H0_3[:,3][1], H0_3[:,3][2])
+        group_3.axis = vector(H0_3[:,0][0], H0_3[:,0][1], H0_3[:,0][2])
+        #group_3.origin = vector(H0_3[:,3][0], H0_3[:,3][1], H0_3[:,3][2])
+
         
 
 
@@ -255,7 +260,7 @@ def rotate_x(event):
     if event.key == 'a' or event.key == 'b' or event.key == 'c' or event.key == 'd':
         print(H0_1[:])
         print(H0_2[:])
-        #print(d2_3)
+        print(H0_3[:])
         print("------------------")
        
 
