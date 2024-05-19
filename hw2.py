@@ -7,9 +7,9 @@ import numpy as np
 
 
 scene.caption = ""
-scene.camera.pos = vector(30, 10, -30)
+scene.camera.pos = vector(30, 0, -30)
 scene.camera.axis = vector(-10, -10, -10)
-scene.center = vector(5, 5, 5)
+scene.center = vector(5, 15, 5)
 scene.autoscale = False
 
 
@@ -177,7 +177,7 @@ def rotate_x(event):
 
 
         group_3.pos = vector(H0_2[:,3][0], H0_2[:,3][1], H0_2[:,3][2])
-        group_3.axis = vector(H0_2[:,0][0], H0_2[:,0][1], H0_2[:,0][2])
+        group_3.axis = vector(H0_3[:,0][0], H0_3[:,0][1], H0_3[:,0][2])
         #group_3.origin = vector(H0_2[:,3][0], H0_2[:,3][1], H0_2[:,3][2])
 
         
@@ -187,7 +187,7 @@ def rotate_x(event):
 
 
         group_3.pos = vector(H0_2[:,3][0], H0_2[:,3][1], H0_2[:,3][2])
-        group_3.axis = vector(H0_2[:,0][0], H0_2[:,0][1], H0_2[:,0][2])
+        group_3.axis = vector(H0_3[:,0][0], H0_3[:,0][1], H0_3[:,0][2])
         #group_3.origin = vector(H0_2[:,3][0], H0_2[:,3][1], H0_2[:,3][2])
 
        
@@ -197,67 +197,13 @@ def rotate_x(event):
         #group_2.axis = vector(-H0_2[:,2][1], H0_2[:,2][0], H0_2[:,2][2])
 
 
-        group_3.pos = vector(H0_3[:,3][0], H0_3[:,3][1], H0_3[:,3][2])
+        #group_3.pos = vector(H0_3[:,3][0], H0_3[:,3][1], H0_3[:,3][2])
         group_3.axis = vector(H0_3[:,0][0], H0_3[:,0][1], H0_3[:,0][2])
         #group_3.origin = vector(H0_3[:,3][0], H0_3[:,3][1], H0_3[:,3][2])
 
-        
 
 
-    # group_2.pos = vector(H0_1[:,3][0], H0_1[:,3][1], H0_1[:,3][2])
-    # group_2.axis = vector(-H0_1[:,2][1], H0_1[:,2][0], H0_1[:,2][2])
-    # group_2.length = -5
-
-    # group_3.pos = vector(H0_2[:,3][0], H0_2[:,3][1], H0_2[:,3][2])
-    # group_3.axis = vector(-H0_2[:,2][1], H0_2[:,2][0], H0_2[:,2][2])
-    # group_3.length = -5
-
-
-
-
-    # cylinder2.pos = vector(H0_1[:,3][0], H0_1[:,3][1], H0_1[:,3][2])
-    # cylinder2.axis = vector(H0_1[:,2][0], H0_1[:,2][1], H0_1[:,2][2])
-    # cylinder2.length = -5
-
-    # cylinder2_line1.pos = vector(H0_1[:,3][0]+5, H0_1[:,3][1], H0_1[:,3][2])
-    # cylinder2_line1.axis = vector(H0_1[:,2][0], H0_1[:,2][1], H0_1[:,2][2])
-
-    # cylinder2_line2.pos = vector(H0_1[:,3][0], H0_1[:,3][1], H0_1[:,3][2])
-    # cylinder2_line2.axis = vector(H0_1[:,2][0], H0_1[:,2][1], H0_1[:,2][2])
-
-    # cylinder2_line3.pos = vector(H0_1[:,3][0], H0_1[:,3][1], H0_1[:,3][2])
-    # cylinder2_line3.axis = vector(H0_1[:,2][0], H0_1[:,2][1], H0_1[:,2][2])
-
-    # cylinder2_line3.pos = vector(H0_1[:,3][0], H0_1[:,3][1], H0_1[:,3][2])
-    # cylinder2_line3.axis = vector(H0_1[:,2][0], H0_1[:,2][1], H0_1[:,2][2])
-
-    
-
-
-    # cylinder3.pos = vector(H0_2[:,3][0], H0_2[:,3][1], H0_2[:,3][2])
-    # cylinder3.axis = vector(H0_2[:,2][0], H0_2[:,2][1], H0_2[:,2][2])
-    # cylinder3.length = -5
-
-    # cylinder3_line1.pos = vector(H0_2[:,3][0], H0_2[:,3][1], H0_2[:,3][2])
-    # cylinder3_line1.axis = vector(-H0_2[:,2][1], H0_2[:,2][0], H0_2[:,2][2])
-    # cylinder3_line1.size = vector(0.5, 5, 0.5)
-
-    # cylinder3_line2.pos = vector(H0_2[:,3][0], H0_2[:,3][1], H0_2[:,3][2])
-    # cylinder3_line2.axis = vector(-H0_2[:,2][1], H0_2[:,2][0], H0_2[:,2][2])
-    # cylinder3_line2.size = vector(5, 0.5, 0.5)
-
-    # cylinder3_line3.pos = vector(H0_2[:,3][0], H0_2[:,3][1], H0_2[:,3][2])
-    # cylinder3_line3.axis = vector(-H0_2[:,2][1], H0_2[:,2][0], H0_2[:,2][2])
-    # cylinder3_line3.size = vector(5, 0.5, 0.5)
-
-    # cylinder3_line4.pos = vector(H0_2[:,3][0], H0_2[:,3][1], H0_2[:,3][2])
-    # cylinder3_line4.axis = vector(-H0_2[:,2][1], H0_2[:,2][0], H0_2[:,2][2])
-    # cylinder3_line4.size = vector(5, 0.5, 0.5)
-
-
-
-
-    if event.key == 'a' or event.key == 'b' or event.key == 'c' or event.key == 'd':
+    if event.key == 'a' or event.key == 'b' or event.key == 'c' or event.key == 'd' or event.key == 'e' or event.key == 'f':
         print(H0_1[:])
         print(H0_2[:])
         print(H0_3[:])
@@ -269,10 +215,3 @@ scene.bind('keydown', rotate_x)
 while True:
     rate(60)
 
-
-
-
-
-
-
-   
